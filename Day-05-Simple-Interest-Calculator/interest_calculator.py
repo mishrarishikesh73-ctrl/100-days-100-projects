@@ -1,35 +1,34 @@
-def calculate_interest(principal, rate, time):
-
-    interest = (principal * rate * time) / 100
-
-    total_amount = principal + interest
-
-    return interest, total_amount
+def calculate_interest(P,R,T):
+    interest = (P*R*T)/100
+    total_amount = P+interest
+    return interest,total_amount
 
 
-print("==============================")
-print("   SIMPLE INTEREST CALCULATOR")
-print("==============================")
+print("===========================")
+print(" SIMPLE INTEREST CALCULATOR")
+print("===========================")
+
 
 try:
-    principal = float(input("Enter principal amount: "))
-    rate = float(input("Enter annual interest rate (%): "))
-    time = float(input("Enter time in years: "))
+    P = float(input("Enter p amount"))
+    R = float(input("Enter annual interest rate(%)"))
+    T = float(input("Enter time in year"))
 
-    if principal < 0 or rate < 0 or time < 0:
-        print("Please enter non-negative values.")
-
+    if P <0 or R < 0 or T <0:
+        print("Please enter non-nagtive value.")
     else:
-        interest, total = calculate_interest(
-            principal, rate, time
-        )
+        interest ,total = calculate_interest(
+            P , R , T
+        )    
 
         print("\n--------- RESULT ---------")
-        print(f"Principal Amount: ₹{principal:.2f}")
-        print(f"Interest Rate: {rate:.2f}%")
-        print(f"Time: {time:.2f} years")
+        print(f"Principal Amount: ₹{P:.2f}")
+        print(f"Interest Rate: {R:.2f}%")
+        print(f"Time: {T:.2f} years")
         print(f"Simple Interest: ₹{interest:.2f}")
         print(f"Total Amount: ₹{total:.2f}")
-
 except ValueError:
-    print("Invalid input! Please enter numeric values.")
+    print("Invalid input! please enter numeric values")        
+
+
+    
